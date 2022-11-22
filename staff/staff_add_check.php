@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>ろくまる農園</title>
+    <title>ろふまお農園</title>
 </head>
 
 <body>
