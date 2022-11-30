@@ -7,9 +7,7 @@
     <body>
         一覧表示<br/>
         <br/>
-        <form method ="post"action ="koji_add_check.php">
-            ID<br/>
-            <input type ="text"name="ID"style="width:200px"><br/>
+        <form method ="post"action ="kojin_add_check.php">
             氏名<br/>
             <input type="text"name="name"style="width:200px"><br/>
             ふりがな<br/>
@@ -19,7 +17,7 @@
             住所<br/>
             <input type="text"name="jusho"style="width:200px"><br/>
             電話番号<br/>
-            <input type="text"name="denwa"style="width:200px"><br/>
+            <input type="text"name="tel"style="width:200px"><br/>
             Eメールアドレス<br/>
             <input type="text"name="email"style="width:200px"><br/>
             <br/>
