@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>個人情報 </title>
+    <title>個人情報</title>
 </head>
 
 <body>
@@ -22,14 +22,14 @@
 
         print '一覧表示<br /><br />';
 
-        print'<form method="post"action="staff_branch.php">';
+        print'<form method="post"action="kojin_branch.php">';
         while (true) {
             $rec = $stmt->fetch(PDO::FETCH_ASSOC);
             if ($rec == false) {
                 break;
             }
 
-            print'<input type="radio"name="staffcode"value="'.$rec['code'].'">';
+            print'<input type="radio"name="kadai1ID"value="'.$rec['code'].'">';
             print $rec['name'];
             print '<br />';
         }

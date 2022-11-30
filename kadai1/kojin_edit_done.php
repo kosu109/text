@@ -8,6 +8,8 @@
         <?php
 
         try{
+
+            $kadai1_ID=$_POST['ID'];
             $kojin_name=$_POST['name'];
             $kojin_name2=$_POST['name2'];
             $kojin_yubin=$_POST['yubin'];
@@ -28,7 +30,7 @@
             $dbh =new PDO($dsn,$user);
             $dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-            $sql='INSERT INTO kadai1(name,name2,yubin,jusho,tel,email)VALUES(?,?)';
+            $sql= 'UPDATE kadai1_ID SET name=?,name2=?,yubin=?,jusho=?,tel=?,email=? WHERE ID=?';
             $stmt=$dbh->prepare($sql);
             $data[]=$kojin_name;
             $data[]=$kojin_name2;
@@ -36,12 +38,11 @@
             $data[]=$kojin_jusho;
             $data[]=$kojin_tel;
             $data[]=$kojin_email;
+            $data[]=$kadai1_ID;
             $stmt->execute($data);
 
         $dbh =null;
 
-        print $kojin_name;
-        print 'さんを登録しました。<br />';
         }
 
         catch(Exception $e){
@@ -50,7 +51,8 @@
             exit();
         }
         ?>
-
-        <a href="kojin_list.php">戻る</a>
+        修正しました。<br />
+        <br />
+        <a href="staff_list.php">戻る</a>
     </body>
 </html>

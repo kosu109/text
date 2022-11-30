@@ -2,10 +2,10 @@
 <html lang="ja">
     <head>
         <meta charset="UTF-8">
-        <title>個人情報 </title>
+        <title>個人情報</title>
     </head>
     <body>
-        一覧表示<br/>
+        個人表示<br/>
         <br/>
         <form method ="post"action ="kojin_add_check.php">
             氏名<br/>
