@@ -13,7 +13,7 @@
             $dbh=new PDO($dsn,$user,$passwd);
             $dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-            $sql='SELECT name FROM kadai1 WHERE ID=?';
+            $sql='SELECT name FROM kojin_ID WHERE ID=?';
             $stmt=$dbh->prepare($sql);
             $data[]=$kojin_ID;
             $data[]=$kojin_name;
@@ -40,19 +40,17 @@
         }
         ?>
 
-        修正<br/>
+        情報参照<br/>
         <br/>
         ID<br/>
         <?php print $kojin_ID;?>
         <br/>
+        氏名<br />
+        <?php print $kojin_name;?>
         <br/>
-        <form method="post"action="kojin_edit_check.php">
-            <input type="hidden"name="ID"value="<?php print $kojin_ID;?>">
-            氏名<br/>
-            <input type="text" name="name" style="width:200px"value="<?php print $kojin_name;?>"><br/>
-            <br/>
+        <br/>
+        <form>
             <input type="button"onclick="histry.back()"value="戻る">
-            <input type="submit"value="OK">
         </form>
     </body>
 </html>

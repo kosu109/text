@@ -7,7 +7,7 @@
     <body>
         <?php
 
-        $kadai1_ID=$_POST['ID'];
+        $kojin_ID=$_POST['ID'];
         $kojin_name=$_POST['name'];
         $kojin_name2=$_POST['name2'];
         $kojin_yubin=$_POST['yubin'];
@@ -82,7 +82,7 @@
             $kojin_tel==md5($kojin_tel);
             $kojin_email==md5($kojin_email);
             print '<form method="post"action="kojin_edit_done.php">';
-            print '<input type="hidden"name="ID"value="' . $kadai1_ID . '">';
+            print '<input type="hidden"name="ID"value="' . $kojin_ID . '">';
             print '<input type="hidden"name="name"value="' . $kojin_name . '">';
             print '<input type="hidden"name="name2"value="' . $kojin_name2 . '">';
             print '<input type="hidden"name="yubin"value="' . $kojin_yubin . '">';

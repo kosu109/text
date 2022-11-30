@@ -85,7 +85,7 @@
             print '<input type="hidden"name="name2"value="' . $kojin_name2 . '">';
             print '<input type="hidden"name="yubin"value="' . $kojin_yubin . '">';
             print '<input type="hidden"name="jusho"value="' . $kojin_jusho . '">';
-            print '<input type="hidden"name="denwa"value="' . $kojin_tel . '">';
+            print '<input type="hidden"name="tel"value="' . $kojin_tel . '">';
             print '<input type="hidden"name="email"value="' . $kojin_email . '">';
             print '<br />';
             print '<input type="button"onclick="history.back()"value="戻る">';

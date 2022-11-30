@@ -13,10 +13,10 @@
             $dbh=new PDO($dsn,$user,$passwd);
             $dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-            $sql='SELECT name FROM kadai1 WHERE ID=?';
+            $sql='SELECT name FROM kojin_ID WHERE ID=?';
             $stmt=$dbh->prepare($sql);
             $data[]=$kojin_ID;
-            $data[]=$kojin_name;
+            $deta[]=$kojin_name;
             $data[]=$kojin_name2;
             $data[]=$kojin_yubin;
             $data[]=$kojin_jusho;
@@ -40,17 +40,18 @@
         }
         ?>
 
-        修正<br/>
+        氏名削除<br/>
         <br/>
         ID<br/>
         <?php print $kojin_ID;?>
         <br/>
+        氏名<br />
+        <?php print $kojin_name;?>
+        <br />
+        この氏名を削除してもよろしいですか？<br />
         <br/>
-        <form method="post"action="kojin_edit_check.php">
+        <form method="post"action="kojin_delete_done.php">
             <input type="hidden"name="ID"value="<?php print $kojin_ID;?>">
-            氏名<br/>
-            <input type="text" name="name" style="width:200px"value="<?php print $kojin_name;?>"><br/>
-            <br/>
             <input type="button"onclick="histry.back()"value="戻る">
             <input type="submit"value="OK">
         </form>

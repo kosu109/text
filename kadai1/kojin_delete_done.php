@@ -13,15 +13,9 @@
             $dbh=new PDO($dsn,$user,$passwd);
             $dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-            $sql='SELECT name FROM kadai1 WHERE ID=?';
+            $sql='DELETE FROM kojin_ID WHERE ID=?';
             $stmt=$dbh->prepare($sql);
             $data[]=$kojin_ID;
-            $data[]=$kojin_name;
-            $data[]=$kojin_name2;
-            $data[]=$kojin_yubin;
-            $data[]=$kojin_jusho;
-            $data[]=$kojin_tel;
-            $data[]=$kojin_email;
             $stmt->execute($data);
 
             $rec=$stmt->fetch(PDO::FETCH_ASSOC);
@@ -40,19 +34,8 @@
         }
         ?>
 
-        修正<br/>
+        削除しました。<br/>
         <br/>
-        ID<br/>
-        <?php print $kojin_ID;?>
-        <br/>
-        <br/>
-        <form method="post"action="kojin_edit_check.php">
-            <input type="hidden"name="ID"value="<?php print $kojin_ID;?>">
-            氏名<br/>
-            <input type="text" name="name" style="width:200px"value="<?php print $kojin_name;?>"><br/>
-            <br/>
-            <input type="button"onclick="histry.back()"value="戻る">
-            <input type="submit"value="OK">
-        </form>
+            <a href="kojin_list.php">戻る</a>
     </body>
 </html>

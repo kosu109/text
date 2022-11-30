@@ -11,10 +11,10 @@
     try {
         $dsn = 'mysql:dbname=shop;host=localhost;charset=utf8';
         $user = 'root';
-        $dbh = new PDO($dsn, $user);
+        $dbh = new PDO($dsn, $user,$password);
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $sql = 'SELECT code,name FROM kadai1 WHERE 1';
+        $sql = 'SELECT ID,name FROM kadai1 WHERE 1';
         $stmt = $dbh->prepare($sql);
         $stmt->execute();
 
@@ -29,8 +29,13 @@
                 break;
             }
 
-            print'<input type="radio"name="kadai1ID"value="'.$rec['code'].'">';
+            print'<input type="radio"name="ID"value="'.$rec['ID'].'">';
             print $rec['name'];
+            print $rec['name2'];
+            print $rec['yubin'];
+            print $rec['jusho'];
+            print $rec['tel'];
+            print $rec['email'];
             print '<br />';
         }
         print'<input type="submit"name="disp"value="参照">';

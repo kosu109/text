@@ -9,7 +9,7 @@
 
         try{
 
-            $kadai1_ID=$_POST['ID'];
+            $kojin_ID=$_POST['ID'];
             $kojin_name=$_POST['name'];
             $kojin_name2=$_POST['name2'];
             $kojin_yubin=$_POST['yubin'];
@@ -27,10 +27,10 @@
             $dsn ='mysql:dbname=shop;host=localhost;charset=utf8';
             $user ='root';
             $password='';
-            $dbh =new PDO($dsn,$user);
+            $dbh =new PDO($dsn,$user,$password);
             $dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-            $sql= 'UPDATE kadai1_ID SET name=?,name2=?,yubin=?,jusho=?,tel=?,email=? WHERE ID=?';
+            $sql= 'UPDATE kojin_ID SET name=?,name2=?,yubin=?,jusho=?,tel=?,email=? WHERE ID=?';
             $stmt=$dbh->prepare($sql);
             $data[]=$kojin_name;
             $data[]=$kojin_name2;
