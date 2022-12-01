@@ -2,7 +2,7 @@
 <html lang="ja">
     <head>
         <meta charset="UTF-8">
-        <title>個人情報</title>
+        <title>個人情報  </title>
     </head>
     <body>
         <?php
