@@ -26,11 +26,10 @@
 
             $dsn ='mysql:dbname=shop;host=localhost;charset=utf8';
             $user ='root';
-            $password='';
-            $dbh =new PDO($dsn,$user,$password);
+            $dbh =new PDO($dsn,$user);
             $dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-            $sql= 'UPDATE kojin_ID SET name=?,name2=?,yubin=?,jusho=?,tel=?,email=? WHERE ID=?';
+            $sql= 'UPDATE kojin SET name=?,name2=?,yubin=?,jusho=?,tel=?,email=? WHERE ID=?';
             $stmt=$dbh->prepare($sql);
             $data[]=$kojin_name;
             $data[]=$kojin_name2;

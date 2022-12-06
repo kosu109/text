@@ -10,10 +10,10 @@
             $kojin_ID=$_GET['ID'];
             $dsn='mysql:dbname=shop;host=localhost;charset=utf8';
             $user='root';
-            $dbh=new PDO($dsn,$user,$passwd);
+            $dbh=new PDO($dsn,$user);
             $dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-            $sql='SELECT name FROM kadai1 WHERE ID=?';
+            $sql='SELECT name FROM kojin WHERE ID=?';
             $stmt=$dbh->prepare($sql);
             $data[]=$kojin_ID;
             $data[]=$kojin_name;
@@ -50,6 +50,16 @@
             <input type="hidden"name="ID"value="<?php print $kojin_ID;?>">
             氏名<br/>
             <input type="text" name="name" style="width:200px"value="<?php print $kojin_name;?>"><br/>
+            ふりがな<br/>
+            <input type="text" name="name" style="width:200px"value="<?php print $kojin_name2;?>"><br/>
+            郵便番号<br/>
+            <input type="text" name="name" style="width:200px"value="<?php print $kojin_yubin;?>"><br/>
+            住所<br/>
+            <input type="text" name="name" style="width:200px"value="<?php print $kojin_jusho;?>"><br/>
+            電話番号<br/>
+            <input type="text" name="name" style="width:200px"value="<?php print $kojin_tel;?>"><br/>
+            Eメールアドレス<br/>
+            <input type="text" name="name" style="width:200px"value="<?php print $kojin_email;?>"><br/>
             <br/>
             <input type="button"onclick="histry.back()"value="戻る">
             <input type="submit"value="OK">

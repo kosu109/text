@@ -10,10 +10,10 @@
             $kojin_ID=$_GET['ID'];
             $dsn='mysql:dbname=shop;host=localhost;charset=utf8';
             $user='root';
-            $dbh=new PDO($dsn,$user,$passwd);
+            $dbh=new PDO($dsn,$user);
             $dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-            $sql='DELETE FROM kojin_ID WHERE ID=?';
+            $sql='DELETE FROM kojin WHERE ID=?';
             $stmt=$dbh->prepare($sql);
             $data[]=$kojin_ID;
             $stmt->execute($data);

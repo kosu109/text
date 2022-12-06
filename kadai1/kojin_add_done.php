@@ -24,11 +24,10 @@
 
             $dsn ='mysql:dbname=shop;host=localhost;charset=utf8';
             $user ='root';
-            $password='';
-            $dbh =new PDO($dsn,$user,$password);
+            $dbh =new PDO($dsn,$user);
             $dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-            $sql='INSERT INTO kadai1(name,name2,yubin,jusho,tel,email)VALUES(?,?,?,?,?,?)';
+            $sql='INSERT INTO kojin(name,name2,yubin,jusho,tel,email)VALUES(?,?,?,?,?,?)';
             $stmt=$dbh->prepare($sql);
             $data[]=$kojin_name;
             $data[]=$kojin_name2;

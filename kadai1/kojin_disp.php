@@ -10,27 +10,16 @@
             $kojin_ID=$_GET['ID'];
             $dsn='mysql:dbname=shop;host=localhost;charset=utf8';
             $user='root';
-            $dbh=new PDO($dsn,$user,$passwd);
+            $dbh=new PDO($dsn,$user);
             $dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-            $sql='SELECT name FROM kojin_ID WHERE ID=?';
+            $sql='SELECT name FROM kojin WHERE ID=?';
             $stmt=$dbh->prepare($sql);
-            $data[]=$kojin_ID;
             $data[]=$kojin_name;
-            $data[]=$kojin_name2;
-            $data[]=$kojin_yubin;
-            $data[]=$kojin_jusho;
-            $data[]=$kojin_tel;
-            $data[]=$kojin_email;
             $stmt->execute($data);
 
             $rec=$stmt->fetch(PDO::FETCH_ASSOC);
             $kojin_name=$rec['name'];
-            $kojin_name2=$rec['name2'];
-            $kojin_yubin=$rec['yubin'];
-            $kojin_jusho=$rec['jusho'];
-            $kojin_tel=$rec['tel'];
-            $kojin_email=$rec['email'];
 
             $dbh=null;
         }

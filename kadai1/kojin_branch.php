@@ -11,7 +11,7 @@
 
     if (isset($_POST['disp']) == true) {
         if (isset($_POST['ID']) == false) {
-            header('Location:kojin_ng.php');
+            header('Location:kojin_disp.php');
             exit();
         }
         $kojin_ID = $_POST['ID'];
@@ -24,19 +24,19 @@
     }
     if (isset($_POST['edit']) == true) {
         if (isset($_POST['ID']) == false) {
-            header('Location:kojin_ng.php');
+            header('Location:kojin_edit.php');
             exit();
         }
-        $staff_code = $_POST['ID'];
+        $kojin_ID = $_POST['ID'];
         header('Location:kojin_edit.php?ID=' . $kojin_ID);
         exit();
     }
     if (isset($_POST['delete']) == true) {
         if (isset($_POST['ID']) == false) {
-            header('Location:kojin_ng.php');
+            header('Location:kojin_delete.php');
             exit();
         }
-        $staff_code = $_POST['ID'];
+        $kojin_ID = $_POST['ID'];
         header('Location:kojin_delete.php?ID=' . $kojin_ID);
         exit();
     }
