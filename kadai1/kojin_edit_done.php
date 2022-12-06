@@ -37,7 +37,7 @@
             $data[]=$kojin_jusho;
             $data[]=$kojin_tel;
             $data[]=$kojin_email;
-            $data[]=$kadai1_ID;
+            $data[]=$kojin_ID;
             $stmt->execute($data);
 
         $dbh =null;

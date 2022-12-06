@@ -13,15 +13,9 @@
             $dbh=new PDO($dsn,$user);
             $dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-            $sql='SELECT name FROM kojin WHERE ID=?';
+            $sql='SELECT name,name2,yubin,jusho,tel,email FROM kojin WHERE ID=?';
             $stmt=$dbh->prepare($sql);
             $data[]=$kojin_ID;
-            $data[]=$kojin_name;
-            $data[]=$kojin_name2;
-            $data[]=$kojin_yubin;
-            $data[]=$kojin_jusho;
-            $data[]=$kojin_tel;
-            $data[]=$kojin_email;
             $stmt->execute($data);
 
             $rec=$stmt->fetch(PDO::FETCH_ASSOC);
@@ -51,17 +45,17 @@
             氏名<br/>
             <input type="text" name="name" style="width:200px"value="<?php print $kojin_name;?>"><br/>
             ふりがな<br/>
-            <input type="text" name="name" style="width:200px"value="<?php print $kojin_name2;?>"><br/>
+            <input type="text" name="name2" style="width:200px"value="<?php print $kojin_name2;?>"><br/>
             郵便番号<br/>
-            <input type="text" name="name" style="width:200px"value="<?php print $kojin_yubin;?>"><br/>
+            <input type="text" name="yubin" style="width:200px"value="<?php print $kojin_yubin;?>"><br/>
             住所<br/>
-            <input type="text" name="name" style="width:200px"value="<?php print $kojin_jusho;?>"><br/>
+            <input type="text" name="jusho" style="width:200px"value="<?php print $kojin_jusho;?>"><br/>
             電話番号<br/>
-            <input type="text" name="name" style="width:200px"value="<?php print $kojin_tel;?>"><br/>
+            <input type="text" name="tel" style="width:200px"value="<?php print $kojin_tel;?>"><br/>
             Eメールアドレス<br/>
-            <input type="text" name="name" style="width:200px"value="<?php print $kojin_email;?>"><br/>
+            <input type="text" name="email" style="width:200px"value="<?php print $kojin_email;?>"><br/>
             <br/>
-            <input type="button"onclick="histry.back()"value="戻る">
+            <input type="button"onclick="history.back()"value="戻る">
             <input type="submit"value="OK">
         </form>
     </body>

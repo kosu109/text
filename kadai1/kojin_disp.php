@@ -13,13 +13,18 @@
             $dbh=new PDO($dsn,$user);
             $dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-            $sql='SELECT name FROM kojin WHERE ID=?';
+            $sql='SELECT name,name2,yubin,jusho,tel,email FROM kojin WHERE ID=?';
             $stmt=$dbh->prepare($sql);
-            $data[]=$kojin_name;
+            $data[]=$kojin_ID;
             $stmt->execute($data);
 
             $rec=$stmt->fetch(PDO::FETCH_ASSOC);
             $kojin_name=$rec['name'];
+            $kojin_name2=$rec['name2'];
+            $kojin_yubin=$rec['yubin'];
+            $kojin_jusho=$rec['jusho'];
+            $kojin_tel=$rec['tel'];
+            $kojin_email=$rec['email'];
 
             $dbh=null;
         }
@@ -37,9 +42,24 @@
         氏名<br />
         <?php print $kojin_name;?>
         <br/>
+        ふりがな<br />
+        <?php print $kojin_name2;?>
+        <br/>
+        郵便番号<br />
+        <?php print $kojin_yubin;?>
+        <br/>
+        住所<br />
+        <?php print $kojin_jusho;?>
+        <br/>
+        電話番号<br />
+        <?php print $kojin_tel;?>
+        <br/>
+        Eメールアドレス<br />
+        <?php print $kojin_email;?>
+        <br/>
         <br/>
         <form>
-            <input type="button"onclick="histry.back()"value="戻る">
+            <input type="button"onclick="history.back()"value="戻る">
         </form>
     </body>
 </html>

@@ -15,7 +15,7 @@
         $kojin_tel=$_POST['tel'];
         $kojin_email=$_POST['email'];
 
-        $kojin_name=htmlspecialchars($kojin_name2,ENT_QUOTES,'UTF-8');
+        $kojin_name=htmlspecialchars($kojin_name,ENT_QUOTES,'UTF-8');
         $kojin_name2=htmlspecialchars($kojin_name2,ENT_QUOTES,'UTF-8');
         $kojin_yubin=htmlspecialchars($kojin_yubin,ENT_QUOTES,'UTF-8');
         $kojin_jusho=htmlspecialchars($kojin_jusho,ENT_QUOTES,'UTF-8');
@@ -87,7 +87,7 @@
             print '<input type="hidden"name="name2"value="' . $kojin_name2 . '">';
             print '<input type="hidden"name="yubin"value="' . $kojin_yubin . '">';
             print '<input type="hidden"name="jusho"value="' . $kojin_jusho . '">';
-            print '<input type="hidden"name="denwa"value="' . $kojin_tel . '">';
+            print '<input type="hidden"name="tel"value="' . $kojin_tel . '">';
             print '<input type="hidden"name="email"value="' . $kojin_email . '">';
             print '<br />';
             print '<input type="button"onclick="history.back()"value="戻る">';
