@@ -28,16 +28,16 @@
             if ($rec == false) {
                 break;
             }
-
-            print'<input type="radio"name="ID"value="'.$rec['ID'].'">';
+            print'<input type="radio"name="ID"value="'.$rec['ID'].'">'."\n";
             print $rec['name'];
             print '<br />';
         }
-        print'<input type="submit"name="disp"value="参照">';
-        print'<input type="submit"name="add"value="追加">';
-        print'<input type="submit"name="edit"value="修正">';
-        print'<input type="submit"name="delete"value="削除">';
-        print'</form>';
+        echo'<input type="submit"name="disp"value="参照">'."\n";
+        echo'<input type="submit"name="add"value="追加">'."\n";
+        echo'<input type="submit"name="edit"value="修正">'."\n";
+        echo'<input type="submit"name="delete"value="削除">'."\n";
+        print'</form>'."\n";
+
     } catch (Exception $e) {
         print 'ただいま障害により大変ご迷惑をお掛けしております。';
         print '<br>' .$e->getMessage();

@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>個人情報</title>
+        <link href="kojin_disp.css" rel="stylesheet" type="text/css">
     </head>
     <body>
         <?php
@@ -18,6 +19,7 @@
             $data[]=$kojin_ID;
             $stmt->execute($data);
 
+            echo"<div class=kakoi>";
             $rec=$stmt->fetch(PDO::FETCH_ASSOC);
             $kojin_name=$rec['name'];
             $kojin_name2=$rec['name2'];
@@ -25,6 +27,7 @@
             $kojin_jusho=$rec['jusho'];
             $kojin_tel=$rec['tel'];
             $kojin_email=$rec['email'];
+            echo"</div>";
 
             $dbh=null;
         }
