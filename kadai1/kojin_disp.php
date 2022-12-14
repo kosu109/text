@@ -37,29 +37,36 @@
         }
         ?>
 
-        情報参照<br/>
-        <br/>
+        情報参照</br>
+
         ID<br/>
         <?php print $kojin_ID;?>
         <br/>
+
         氏名<br />
         <?php print $kojin_name;?>
         <br/>
+   
         ふりがな<br />
         <?php print $kojin_name2;?>
         <br/>
+
         郵便番号<br />
         <?php print $kojin_yubin;?>
         <br/>
+    
         住所<br />
         <?php print $kojin_jusho;?>
         <br/>
+    
         電話番号<br />
         <?php print $kojin_tel;?>
         <br/>
+   
         Eメールアドレス<br />
         <?php print $kojin_email;?>
         <br/>
+    
         <br/>
         <form>
             <input type="button"onclick="history.back()"value="戻る">

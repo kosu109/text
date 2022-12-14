@@ -34,6 +34,7 @@
         ID<br/>
         <?php print $kojin_ID;?>
         <br/>
+    
         氏名<br />
         <?php print $kojin_name;?>
         <br />
@@ -41,7 +42,7 @@
         <br/>
         <form method="post"action="kojin_delete_done.php">
             <input type="hidden"name="ID"value="<?php print $kojin_ID;?>">
-            <input type="button"onclick="histry.back()"value="戻る">
+            <input type="button"onclick="history.back()"value="戻る">
             <input type="submit"value="OK">
         </form>
     </body>

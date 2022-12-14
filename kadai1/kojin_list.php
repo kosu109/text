@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>個人情報</title>
+    <link href="kojin_list.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -20,18 +21,28 @@
 
         $dbh = null;
 
-        print '一覧表示<br /><br />';
+        print '一覧表示<br />';
 
         print'<form method="post"action="kojin_branch.php">';
+        echo"<table>";
+        echo"<tr>";
+        echo"<th></th>";
+        echo"<th>氏名</th>";
+        echo"</tr>";
+
         while (true) {
             $rec = $stmt->fetch(PDO::FETCH_ASSOC);
             if ($rec == false) {
                 break;
             }
-            print'<input type="radio"name="ID"value="'.$rec['ID'].'">'."\n";
-            print $rec['name'];
+            print '<td> <input type="radio"name="ID"value="'.$rec['ID'].'">'."\n";
+            print "<td>" .$rec['name']."</td>";
             print '<br />';
+            echo"</tr>";
         }
+        echo"</table>";
+        echo"<br/>";
+
         echo'<input type="submit"name="disp"value="参照">'."\n";
         echo'<input type="submit"name="add"value="追加">'."\n";
         echo'<input type="submit"name="edit"value="修正">'."\n";
