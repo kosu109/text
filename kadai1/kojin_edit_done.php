@@ -37,7 +37,7 @@
             $data[]=$kojin_jusho;
             $data[]=$kojin_tel;
             $data[]=$kojin_email;
-            $data[]=$kadai1_ID;
+            $data[]=$kojin_ID;
             $stmt->execute($data);
 
         $dbh =null;
@@ -52,6 +52,6 @@
         ?>
         修正しました。<br />
         <br />
-        <a href="staff_list.php">戻る</a>
+        <a href="kojin_list.php">戻る</a>
     </body>
 </html>

@@ -7,24 +7,18 @@
     <body>
         <?php
         try{
-            $kojin_ID=$_GET['ID'];
+            $kojin_ID=$_POST['ID'];
+
             $dsn='mysql:dbname=shop;host=localhost;charset=utf8';
             $user='root';
             $dbh=new PDO($dsn,$user);
             $dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
+            print"<pre>";
             $sql='DELETE FROM kojin WHERE ID=?';
             $stmt=$dbh->prepare($sql);
             $data[]=$kojin_ID;
             $stmt->execute($data);
-
-            $rec=$stmt->fetch(PDO::FETCH_ASSOC);
-            $kojin_name=$rec['name'];
-            $kojin_name2=$rec['name2'];
-            $kojin_yubin=$rec['yubin'];
-            $kojin_jusho=$rec['jusho'];
-            $kojin_tel=$rec['tel'];
-            $kojin_email=$rec['email'];
 
             $dbh=null;
         }
