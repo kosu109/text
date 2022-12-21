@@ -2,7 +2,7 @@
 <html lang="ja">
     <head>
         <meta charset="UTF-8">
-        <title>ろくまる農園</title>
+        <title>ろふまお農園</title>
     </head>
     <body>
         商品が選択されていません。<br />

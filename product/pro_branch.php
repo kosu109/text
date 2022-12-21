@@ -2,7 +2,7 @@
 <html lang="ja">
     <head>
         <meta charset="UTF-8">
-        <title>ろくまる農園</title>
+        <title>ろふまお農園</title>
     </head>
     <body>
         <?php
@@ -30,7 +30,7 @@
             exit();
         }
         if(isset($_POST['delete'])==true){
-            if(isset($_POST['$procode'])==false){
+            if(isset($_POST['procode'])==false){
                 header('Location:pro_ng.php');
                 exit();
             }

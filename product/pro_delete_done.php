@@ -2,13 +2,14 @@
 <html lang="ja">
     <head>
         <meta charset="UTF-8">
-        <title>ろくまる農園</title>
+        <title>ろふまお農園</title>
     </head>
     <body>
         <?php
 
         try{
             $pro_code=$_POST['code'];
+            $pro_gazou_name=$_POST['gazou_name'];
             
             $dsn ='mysql:dbname=shop;host=localhost;charset=utf8';
             $user ='root';
@@ -22,6 +23,10 @@
             $stmt->execute($data);
 
         $dbh =null;
+
+        if($pro_gazou_name!=''){
+            unlink('./gazou/'.$pro_gazou_name);
+        }
 
         }
 
