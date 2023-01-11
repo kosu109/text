@@ -14,21 +14,21 @@
             $dbh=new PDO($dsn,$user,$password);
             $dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-            $sql='SELECT title,file FROM image WHERE ID=?';
+            $sql='SELECT id,title,file FROM image WHERE ID=?';
             $stmt=$dbh->prepare($sql);
             $data[]=$img_id;
             $stmt->execute($data);
 
             $rec=$stmt->fetch(PDO::FETCH_ASSOC);
             $img_title=$rec['title'];
-            $pro_gazou_name=$rec['gazou'];
+            $img_file=$rec['file'];
 
             $dbh=null;
             
-            if($pro_gazou_name==''){
+            if($img_file==''){
                 $disp_file='';
             }else{
-                $disp_file='<img src="./file/'.$pro_gazou_name.'">';
+                $disp_file='<img src="./file/'.$img_file.'">';
             }
         }
         catch(Exception $e){
@@ -47,7 +47,7 @@
         <br/>
         <?php print $disp_file;?>
         <br/>
-        このファイルを削除してよろしいですか？<br/>
+        このファイルを削除しますか？<br/>
         <br/>
         <form method="post"action="img_delete_done.php">
             <input type="hidden"name="id"value="<?php print $img_id;?>">

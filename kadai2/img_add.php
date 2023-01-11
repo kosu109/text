@@ -10,9 +10,11 @@
     登録画面<br />
     <br />
     <form method="post" action="img_add_check.php" enctype="multipart/form-data">
-        タイトルを入力してください。<br />
-        <input type="text" name="title" style="width:50px"><br />
-        サムネイルを選んでください。<br />
+        画面のタイトル<br />
+        <input type="text" name="title" style="width:200px"><br />
+        画像の説明<br/>
+        <input type="text" name="description" style="width:400px"><br />
+        画面のファイルの選択<br />
         <input type="file" name="file" style="width:400px"><br />
         <br />
         <button type="button" onclick="history.back()">戻る</button>

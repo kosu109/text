@@ -7,15 +7,15 @@
     <body>
         <?php
         try{
-            $img_ID=$_GET['ID'];
+            $img_id=$_GET['id'];
             $dsn='mysql:dbname=shop;host=localhost;charset=utf8';
             $user='root';
             $dbh=new PDO($dsn,$user);
             $dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-            $sql='SELECT name,name2,yubin,jusho,tel,email FROM image WHERE ID=?';
+            $sql='SELECT title,description,file FROM image WHERE ID=?';
             $stmt=$dbh->prepare($sql);
-            $data[]=$img_ID;
+            $data[]=$img_id;
             $stmt->execute($data);
 
             $rec=$stmt->fetch(PDO::FETCH_ASSOC);
