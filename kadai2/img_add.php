@@ -7,11 +7,9 @@
 </head>
 
 <body>
-    追加<br />
+    登録画面<br />
     <br />
     <form method="post" action="img_add_check.php" enctype="multipart/form-data">
-        IDを入力してください<br />
-        <input type="text" name="id" style="width:200px"><br />
         タイトルを入力してください。<br />
         <input type="text" name="title" style="width:50px"><br />
         サムネイルを選んでください。<br />
