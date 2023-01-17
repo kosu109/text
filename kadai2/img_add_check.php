@@ -33,13 +33,16 @@
         print $img_description;
         print '<br />';
     }
-    if (preg_match('/\A[0-9]+\z/',$img_file)==0) {
-        print '画像が未入力です。<br />';
-    } else {
+    if ($img_file['size']<0) {
+       print '画像が未入力です。<br />';
+    } if($img_file['size']>1000000){
+        print '画像が大きすぎます';
+    }
+    else {
         print'画像:';
         print $img_file;
         print'<br />';
-    }if($img_title==''||preg_match('/\A[0-9]+\z/',$img_title)==0 || $img_title['size']>1000000){
+    }if($img_title==''||($img_title)==0 || $img_title['size']>1000000){
         print'<form>';
         print'<input type="button" onclick="history.back()"value="戻る">';
         print'<form>';

@@ -7,7 +7,7 @@
     <body>
         <?php
         try{
-            $img_id=$_GET['id'];
+            $img_cord=$_GET['imgcord'];
             $dsn='mysql:dbname=shop;host=localhost;charset=utf8';
             $user='root';
             $dbh=new PDO($dsn,$user);

@@ -7,16 +7,17 @@
     <body>
         <?php
         try{
-            $img_id=$_GET['imgid'];
+            $img_cord=$_GET['imgcord'];
+            $img_file_name=$_FILES['file_name'];
             $dsn='mysql:dbname=shop;host=localhost;charset=utf8';
             $user='root';
             $password='';
-            $dbh=new PDO($dsn,$user,$password);
+            $dbh=new PDO($dsn,$user);
             $dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-            $sql='SELECT id,title,file FROM image WHERE ID=?';
+            $sql='SELECT id,title,file FROM image WHERE id=?';
             $stmt=$dbh->prepare($sql);
-            $data[]=$img_id;
+            $data[]=$img_cord;
             $stmt->execute($data);
 
             $rec=$stmt->fetch(PDO::FETCH_ASSOC);
@@ -40,7 +41,7 @@
         画像の削除確認<br/>
         <br/>
         ID<br/>
-        <?php print $img_id;?>
+        <?php print $img_cord;?>
         <br/>
         タイトル<br/>
         <?php print $img_title;?>
@@ -50,8 +51,8 @@
         このファイルを削除しますか？<br/>
         <br/>
         <form method="post"action="img_delete_done.php">
-            <input type="hidden"name="id"value="<?php print $img_id;?>">
-            <input type="hidden"name="gazou_name"value="<?php print $pro_gazou_name;?>">
+            <input type="hidden"name="id"value="<?php print $img_cord;?>">
+            <input type="hidden"name="gazou_name"value="<?php print $img_file_name;?>">
             <input type="button"onclick="history.back()"value="戻る">
             <input type="submit"value="OK">
         </form>
