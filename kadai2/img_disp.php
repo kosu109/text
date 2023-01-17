@@ -7,15 +7,15 @@
     <body>
         <?php
         try{
-            $img_cord=$_GET['imgcord'];
+            $img_code=$_GET['imgcode'];
             $dsn='mysql:dbname=shop;host=localhost;charset=utf8';
             $user='root';
-            $dbh=new PDO($dsn,$user);
+            $dbh=new PDO($dsn,$user,"");
             $dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-            $sql='SELECT title,description,file FROM image WHERE ID=?';
+            $sql='SELECT title,description,file FROM image WHERE id=?';
             $stmt=$dbh->prepare($sql);
-            $data[]=$img_id;
+            $data[]=$img_code;
             $stmt->execute($data);
 
             $rec=$stmt->fetch(PDO::FETCH_ASSOC);
@@ -40,8 +40,10 @@
         説明<br />
         <?php print $img_description;?>
         <br/>
-
+        画像<br />
+        <?php print $img_file;?>
         <br/>
+        <br />
         <form>
             <input type="button"onclick="history.back()"value="戻る">
         </form>

@@ -13,7 +13,7 @@
         画面のタイトル<br />
         <input type="text" name="title" style="width:200px"><br />
         画像の説明<br/>
-        <input type="text" name="description" style="width:400px"><br />
+        <textarea name="description" cols="50" rows="5"></textarea><br />
         画面のファイルの選択<br />
         <input type="file" name="file" style="width:400px"><br />
         <br />

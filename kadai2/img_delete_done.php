@@ -7,18 +7,18 @@
     <body>
         <?php
         try{
-            $img_cord=$_POST['imgcord'];
-            $img_file_name=$_FILES['file_name'];
+            $img_code=$_POST['imgcode'];
+            $img_file_name=$_POST['file_name'];
 
             $dsn='mysql:dbname=shop;host=localhost;charset=utf8';
             $user='root';
-            $dbh=new PDO($dsn,$user);
+            $dbh=new PDO($dsn,$user,"");
             $dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
             print"<pre>";
             $sql='DELETE FROM image WHERE id=?';
             $stmt=$dbh->prepare($sql);
-            $data[]=$img_cord;
+            $data[]=$img_code;
             $stmt->execute($data);
 
             $dbh=null;

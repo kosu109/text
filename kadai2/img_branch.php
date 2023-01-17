@@ -10,12 +10,12 @@
     <?php
 
     if (isset($_POST['disp']) == true) {
-        if (isset($_POST['cord']) == false) {
-            header('Location:img_disp.php');
+        if (isset($_POST['imgcode']) == false) {
+            header('Location:img_ng.php');
             exit();
         }
-        $img_id = $_POST['cord'];
-        header('Location:img_disp.php?id=' . $img_cord);
+        $img_code = $_POST['imgcode'];
+        header('Location:img_disp.php?imgcode=' . $img_code);
         exit();
     }
     if (isset($_POST['add']) == true) {
@@ -23,12 +23,12 @@
         exit();
     }
     if (isset($_POST['delete']) == true) {
-        if (isset($_POST['cord']) == false) {
-            header('Location:img_delete.php');
+        if (isset($_POST['imgcode']) == false) {
+            header('Location:img_ng.php');
             exit();
         }
-        $img_cord = $_POST['cord'];
-        header('Location:img_delete.php?id=' . $img_cord);
+        $img_code = $_POST['imgcode'];
+        header('Location:img_delete.php?imgcode=' . $img_code);
         exit();
     }
     ?>

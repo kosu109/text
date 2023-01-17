@@ -10,7 +10,7 @@
         try{
             $img_title=$_POST['title'];
             $img_description=$_POST['description'];
-            $img_file=$_POST['file'];
+            $img_file=$_POST['file_name'];
             
             $img_title=htmlspecialchars($img_title,ENT_QUOTES,'UTF-8');
             $img_description=htmlspecialchars($img_description,ENT_QUOTES,'UTF-8');

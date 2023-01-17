@@ -11,7 +11,7 @@
     try {
         $dsn = 'mysql:dbname=shop;host=localhost;charset=utf8';
         $user = 'root';
-        $dbh = new PDO($dsn, $user);
+        $dbh = new PDO($dsn, $user,"");
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         $sql = 'SELECT id,title,file FROM image WHERE 1';
@@ -28,7 +28,7 @@
             if ($rec == false) {
                 break;
             }
-            print ' <input type="radio"name="id"value="'.$rec['id'].'">'."\n";
+            print ' <input type="radio"name="imgcode"value="'.$rec['id'].'">'."\n";
             print $rec['title'];
             print $rec['file'];
             print '<br />';
