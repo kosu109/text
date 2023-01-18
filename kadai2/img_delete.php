@@ -40,10 +40,10 @@
 
         画像の削除確認<br/>
         <br/>
-        ID<br/>
+        [ID]<br/>
         <?php print $img_code;?>
         <br/>
-        タイトル<br/>
+        [タイトル]<br/>
         <?php print $img_title;?>
         <br/>
         <?php print $disp_file;?>

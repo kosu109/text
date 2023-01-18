@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>画像ライブラリ</title>
+    <link href="img_list.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -23,16 +24,29 @@
         print '画像一覧<br />';
 
         print'<form method="post"action="img_branch.php">';
+        echo"<table>";
+        echo"<tr>";
+        echo"<th></th>";
+        echo"<th>ID</th>";
+        echo"<th>タイトル</th>";
+        echo"<th>サムネイル</th>";
+        echo"</tr>";
         while (true) {
             $rec = $stmt->fetch(PDO::FETCH_ASSOC);
             if ($rec == false) {
                 break;
             }
-            print ' <input type="radio"name="imgcode"value="'.$rec['id'].'">'."\n";
-            print $rec['title'];
-            print $rec['file'];
+            $img_file_name=$rec['file'];
+            $disp_file='<img src="./image/'.$img_file_name.'">';
+            print '<td> <input type="radio"name="imgcode"value="'.$rec['id'].'">'."\n";
+            print "<td>".$rec['id']."</td>";
+            print "<td>".$rec['title']."</td>";
+            print "<td>".$disp_file."<td>";
             print '<br />';
         }
+        echo"</table>";
+        echo"<br/>";
+
         print'<input type="submit"name="disp"value="参照">';
         print'<input type="submit"name="add"value="追加">';
         print'<input type="submit"name="delete"value="削除">';

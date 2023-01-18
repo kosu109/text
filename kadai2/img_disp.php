@@ -21,9 +21,15 @@
             $rec=$stmt->fetch(PDO::FETCH_ASSOC);
             $img_title=$rec['title'];
             $img_description=$rec['description'];
-            $img_file=$rec['file'];
+            $img_file_name=$rec['file'];
 
             $dbh=null;
+
+            if($img_file_name==''){
+                $disp_file='';
+            }else{
+                $disp_file='<img src="./image/'.$img_file_name.'">';
+            }
         }
         catch(Exception $e){
             print'ただいま障害により大変ご迷惑をお掛けしております。';
@@ -33,15 +39,14 @@
 
         画像の表示</br>
 
-        タイトル<br/>
+        [タイトル]<br/>
         <?php print $img_title;?>
         <br/>
-
-        説明<br />
+        <br/>
+        [説明]<br />
         <?php print $img_description;?>
         <br/>
-        画像<br />
-        <?php print $img_file;?>
+        <?php print $disp_file;?>
         <br/>
         <br />
         <form>
