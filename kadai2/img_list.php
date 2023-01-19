@@ -42,7 +42,7 @@
             print "<td>".$rec['id']."</td>";
             print "<td>".$rec['title']."</td>";
             print "<td>".$disp_file."<td>";
-            print '<br />';
+            print '<tr><br /><tr>';
         }
         echo"</table>";
         echo"<br/>";
