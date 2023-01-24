@@ -16,7 +16,7 @@
     $img_title = htmlspecialchars($img_title, ENT_QUOTES, 'UTF-8');
     $img_description = htmlspecialchars($img_description, ENT_QUOTES, 'UTF-8');
 
-    
+    print '画像の登録確認<br />';
     if ($img_title == '') {
         print 'タイトルが未入力です。<br />';
         

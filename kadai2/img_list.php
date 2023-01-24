@@ -21,7 +21,7 @@
 
         $dbh = null;
 
-        print '画像一覧<br />';
+        print '<h1>画像一覧</h1><br />';
 
         print'<form method="post"action="img_branch.php">';
         echo"<table>";

@@ -37,13 +37,13 @@
         }
         ?>
 
-        画像の表示</br>
+        <h1>画像の表示</br></h1>
 
-        [タイトル]<br/>
+        [タイトル]
         <?php print $img_title;?>
         <br/>
         <br/>
-        [説明]<br />
+        [説明]
         <?php print $img_description;?>
         <br/>
         <?php print $disp_file;?>

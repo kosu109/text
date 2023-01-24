@@ -8,12 +8,13 @@ body{
         color: #000;
         background-color: white;
    }
+
    h1{
     padding:1rem 2rem;
     background: #006400;
     text-align: center;
     color: #fff;
-}
+    }
 
    th,td {
         border: solid 1px;
