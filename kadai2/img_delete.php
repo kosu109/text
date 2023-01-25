@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>画像ライブラリ</title>
+        <link href="img_delete.css" rel="stylesheet" type="text/css">
     </head>
     <body>
         <?php
@@ -38,12 +39,12 @@
         }
         ?>
 
-        画像の削除確認<br/>
+        <h1>画像の削除確認<br/></h1>
         <br/>
-        [ID]<br/>
+        [ID]
         <?php print $img_code;?>
         <br/>
-        [タイトル]<br/>
+        [タイトル]
         <?php print $img_title;?>
         <br/>
         <?php print $disp_file;?>

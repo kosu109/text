@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>画像ライブラリ</title>
+        <link href="img_disp.css" rel="stylesheet" type="text/css">
     </head>
     <body>
         <?php
@@ -38,7 +39,7 @@
         ?>
 
         <h1>画像の表示</br></h1>
-
+        
         [タイトル]
         <?php print $img_title;?>
         <br/>

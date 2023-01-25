@@ -9,8 +9,17 @@ body{
     background-color: #e0ffff;
 }
 h1{
-    padding:1rem 2rem;
-    background: #006400;
-    text-align: center;
-    color: #fff;
+padding:1rem 2rem;
+background: #006400;
+text-align: center;
+color: #fff;
 }
+
+table{
+    border-collapse:  collapse;
+}
+
+th,td {
+    border: solid 1px;
+}
+ 

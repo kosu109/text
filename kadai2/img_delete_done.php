@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>画像ライブラリ</title>
+        <link href="img_delete_done.css" rel="stylesheet" type="text/css">
     </head>
     <body>
         <?php

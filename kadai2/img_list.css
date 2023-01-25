@@ -1,24 +1,29 @@
 @charset "utf-8";
 
 body{
-        margin:1em 0;
-        padding: 0.5em 1em;
-        border-radius:9px;
-        margin-top: 50px;
-        color: #000;
-        background-color: white;
-   }
-   h1{
+    margin:1em 0;
+    padding: 0.5em 1em;
+    border-radius:9px;
+    margin-top: 50px;
+    color:#000;
+    background-color: #e0ffff;
+}
+h1{
     padding:1rem 2rem;
     background: #006400;
     text-align: center;
     color: #fff;
 }
 
-   th,td {
-        border: solid 1px;
-    }
+img{
+    width: 150px;
+    height: auto;
+}
+
+th,td {
+    border: solid 1px;
+}
      
-    table {
-        border-collapse:  collapse;
-    }
+table {
+    border-collapse:  collapse;
+}
